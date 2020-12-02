@@ -4,7 +4,7 @@
 #include "div.hpp"
 #include "add.hpp"
 #include "sub.hpp"
-
+#include <iostream>
 
 Base* Base::parse(char** input, int length) {
     Base* firstVal = new Op(input[1][0] - 48);
@@ -34,8 +34,11 @@ Base* Base::parse(char** input, int length) {
             firstVal = new Sub(firstVal, anotherVal);
             i++;
         }
-        else {
-            Base* firstVal = nullptr;
+        else if (isdigit(input[i][0])) {}
+		else {
+			std::cout << "Invalid Input" << std::endl;
+            firstVal = nullptr;
+			return firstVal;
         }
     }
     return firstVal;
