@@ -3,16 +3,11 @@
 
 #include <string>
 #include "mult.hpp"
-#include "div.hpp"
+#include "op.hpp"
 #include "add.hpp"
-#include "pow.hpp"
 #include "sub.hpp"
-
-class Op;
-class Mult;
-class Pow;
-class Sub;
-class Add;
+#include "div.hpp"
+#include "pow.hpp"
 
 class Base {
     public:
