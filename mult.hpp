@@ -6,8 +6,6 @@
 #include <iomanip>
 #include <sstream>
 
-class Op;
-
 class Mult : public Base {
     private:
         double result;
@@ -25,16 +23,7 @@ class Mult : public Base {
         virtual std::string stringify() { 
             return sentence;
         }
-        virtual Base* parse(char** input, int length) {
-            Base* firstVal = new Op(input[1]+48);
-            for (int i = 2; i < length; i++) {
-                if (input[i] == "*") {
-                    Base* anotherVal = new Op(input[i+1] + 48);
-                    Base* combined = new Mult(firstVal, anotherVal);
-                    i++;
-                }
-            }
-        }
+    
 };
 
 #endif 
