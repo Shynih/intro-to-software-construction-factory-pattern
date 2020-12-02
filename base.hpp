@@ -2,6 +2,17 @@
 #define __BASE_HPP__
 
 #include <string>
+#include "mult.hpp"
+#include "div.hpp"
+#include "add.hpp"
+#include "pow.hpp"
+#include "sub.hpp"
+
+class Op;
+class Mult;
+class Pow;
+class Sub;
+class Add;
 
 class Base {
     public:
