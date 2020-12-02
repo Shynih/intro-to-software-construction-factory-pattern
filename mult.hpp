@@ -23,6 +23,7 @@ class Mult : public Base {
         virtual std::string stringify() { 
             return sentence;
         }
+    
 };
 
 #endif 

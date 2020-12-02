@@ -25,4 +25,4 @@ TEST(OpTest, OpStringify) {
 	EXPECT_EQ(test->stringify(), "4.0");
 }
 
-#endif //__OP_TEST_HPP__
+#endif //__OP_TEST_HPP__ 
