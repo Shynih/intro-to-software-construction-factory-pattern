@@ -1,10 +1,5 @@
 #include <iostream> 
-#include "op.hpp"
-#include "base.hpp"
-#include "mult.hpp"
-#include "add.hpp"
-#include "sub.hpp"
-#include "pow.hpp"
+#include "base.cpp"
 
 using namespace std; 
 
