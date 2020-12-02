@@ -1,3 +1,4 @@
+#include "factory.hpp"
 #include "base.hpp"
 #include "mult.hpp"
 #include "pow.hpp"
@@ -6,14 +7,14 @@
 #include "sub.hpp"
 #include <iostream>
 
-Base* Base::parse(char** input, int length) {
+Base* Factory::parse(char** input, int length) {
     Base* firstVal = new Op(input[1][0] - 48);
     for (int i = 2; i < length; i++) {
         if (input[i][0] == '*' && input[i][1] == '*') {
             Base* anotherVal = new Op(input[i+1][0] - 48);
             firstVal = new Pow(firstVal, anotherVal);
             i++;
-       }
+        }
         else if (input[i][0] == '*') {
             Base* anotherVal = new Op(input[i+1][0] - 48);
             firstVal = new Mult(firstVal, anotherVal);
@@ -35,10 +36,10 @@ Base* Base::parse(char** input, int length) {
             i++;
         }
         else if (isdigit(input[i][0])) {}
-		else {
-			std::cout << "Invalid Input" << std::endl;
+        else {
+            std::cout << "Invalid Input" << std::endl;
             firstVal = nullptr;
-			return firstVal;
+            return firstVal;
         }
     }
     return firstVal;
